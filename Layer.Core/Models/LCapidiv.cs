@@ -1,0 +1,126 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace Layer.Core.Models
+{
+    public partial class LCapidiv
+    {
+        public int Logicalref { get; set; }
+        public short? Firmnr { get; set; }
+        public short? Nr { get; set; }
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string Road { get; set; }
+        public string Doornr { get; set; }
+        public string District { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string Zipcode { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+        public string Taxoff { get; set; }
+        public string Taxnr { get; set; }
+        public string Securnr { get; set; }
+        public short? Siteid { get; set; }
+        public int? Userext { get; set; }
+        public string Taxoffcode { get; set; }
+        public string Cntrycode { get; set; }
+        public DateTime? Moddate { get; set; }
+        public int? Modtime { get; set; }
+        public string Iskurnr { get; set; }
+        public DateTime? Founddate { get; set; }
+        public string Iskurdept { get; set; }
+        public string Indsector { get; set; }
+        public string Logoid { get; set; }
+        public string Sgkusername { get; set; }
+        public string Sgkusercode { get; set; }
+        public string Sgksyspass { get; set; }
+        public string Divpassword { get; set; }
+        public string Iskurtckno { get; set; }
+        public string Iskurpass { get; set; }
+        public string Csgbworkcode { get; set; }
+        public string Csgbfileno { get; set; }
+        public short? Passive { get; set; }
+        public short? Useeinv { get; set; }
+        public string Postlabelcode { get; set; }
+        public string Senderlabelcode { get; set; }
+        public string Webadd { get; set; }
+        public string Emailaddr { get; set; }
+        public short? Firmtype { get; set; }
+        public string Nacecode { get; set; }
+        public short? Useebook { get; set; }
+        public string Traderegisno { get; set; }
+        public string Mersisno { get; set; }
+        public string Title { get; set; }
+        public short? Ebookfileno { get; set; }
+        public short? Useearchive { get; set; }
+        public string Intsalesaddr { get; set; }
+        public DateTime? Ebookstartdate { get; set; }
+        public string Ebookdivname { get; set; }
+        public string Ebookfirmname { get; set; }
+        public string Ebookfirmtitle { get; set; }
+        public short? Ebookcurrtype { get; set; }
+        public short? Earcentsend { get; set; }
+        public string Earcentuser { get; set; }
+        public string Earcentpass { get; set; }
+        public string Earcentdefaddr { get; set; }
+        public int? Lastcontrolno { get; set; }
+        public int? Lastjournalno { get; set; }
+        public int? Lastgloblineno { get; set; }
+        public short? Backupebooks { get; set; }
+        public short? Einvcustom { get; set; }
+        public short? Einvoicetypsgk { get; set; }
+        public string Taxpayercode { get; set; }
+        public string Taxpayername { get; set; }
+        public short? Cpatitle { get; set; }
+        public string Cpaidtcno { get; set; }
+        public string Cpaname { get; set; }
+        public string Cpasurname { get; set; }
+        public string Cpastreet { get; set; }
+        public string Cparoad { get; set; }
+        public string Cpadoornr { get; set; }
+        public string Cpadistrict { get; set; }
+        public string Cpacity { get; set; }
+        public string Cpaphone { get; set; }
+        public string Cpataxoff { get; set; }
+        public string Cpataxnr { get; set; }
+        public string Cpachambnr { get; set; }
+        public string Cpaemail { get; set; }
+        public string Cpausercode { get; set; }
+        public string Cpaparole { get; set; }
+        public string Cpapasswordtaxdecl { get; set; }
+        public string Cpacntrycode { get; set; }
+        public string Cpacountry { get; set; }
+        public string Cpazipcode { get; set; }
+        public string Cpafaxnr { get; set; }
+        public string Cpacontractdesc { get; set; }
+        public string Cpacontracttype { get; set; }
+        public DateTime? Cpacontractdate { get; set; }
+        public string Cpacontractnumber { get; set; }
+        public short? Cpaisebookkeptbyfirm { get; set; }
+        public short? Cpaisymmcontractmade { get; set; }
+        public string Cpaymmname { get; set; }
+        public string Cpaymmcontdesc { get; set; }
+        public string Cpaymmconttype { get; set; }
+        public string Cpaymmphone { get; set; }
+        public string Cpaymmemail { get; set; }
+        public string Cpaymmsurname { get; set; }
+        public DateTime? Cpaymmcontdate { get; set; }
+        public string Cpaymmcontnumber { get; set; }
+        public string Cpaymmfaxnr { get; set; }
+        public short? Useedespatch { get; set; }
+        public string Postlabelcodedesp { get; set; }
+        public string Senderlabelcodedesp { get; set; }
+        public short? Useeproducerrec { get; set; }
+        public short? Useetradesmaninv { get; set; }
+        public short? Earchivetype { get; set; }
+        public short? Usepaperinv { get; set; }
+        public short? Traderegcode { get; set; }
+        public short? Locationtype { get; set; }
+        public string Locbranchcode { get; set; }
+        public string Locbranchaddressnr { get; set; }
+        public short? Propertystatus { get; set; }
+    }
+}

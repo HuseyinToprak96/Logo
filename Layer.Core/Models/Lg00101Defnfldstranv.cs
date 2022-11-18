@@ -1,0 +1,119 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace Layer.Core.Models
+{
+    public partial class Lg00101Defnfldstranv
+    {
+        public int Logicalref { get; set; }
+        public short? Modulenr { get; set; }
+        public short? Level { get; set; }
+        public int? Parentref { get; set; }
+        public int? Ownerref { get; set; }
+        public string Textflds1 { get; set; }
+        public string Textflds2 { get; set; }
+        public string Textflds3 { get; set; }
+        public string Textflds4 { get; set; }
+        public string Textflds5 { get; set; }
+        public string Textflds6 { get; set; }
+        public string Textflds7 { get; set; }
+        public string Textflds8 { get; set; }
+        public string Textflds9 { get; set; }
+        public string Textflds10 { get; set; }
+        public string Textflds11 { get; set; }
+        public string Textflds12 { get; set; }
+        public string Textflds13 { get; set; }
+        public string Textflds14 { get; set; }
+        public string Textflds15 { get; set; }
+        public string Textflds16 { get; set; }
+        public string Textflds17 { get; set; }
+        public string Textflds18 { get; set; }
+        public string Textflds19 { get; set; }
+        public string Textflds20 { get; set; }
+        public string Textflds21 { get; set; }
+        public string Textflds22 { get; set; }
+        public string Textflds23 { get; set; }
+        public string Textflds24 { get; set; }
+        public string Textflds25 { get; set; }
+        public string Textflds26 { get; set; }
+        public string Textflds27 { get; set; }
+        public string Textflds28 { get; set; }
+        public string Textflds29 { get; set; }
+        public string Textflds30 { get; set; }
+        public string Textflds31 { get; set; }
+        public string Textflds32 { get; set; }
+        public string Textflds33 { get; set; }
+        public string Textflds34 { get; set; }
+        public string Textflds35 { get; set; }
+        public string Textflds36 { get; set; }
+        public string Textflds37 { get; set; }
+        public string Textflds38 { get; set; }
+        public string Textflds39 { get; set; }
+        public string Textflds40 { get; set; }
+        public string Textflds41 { get; set; }
+        public string Textflds42 { get; set; }
+        public string Textflds43 { get; set; }
+        public string Textflds44 { get; set; }
+        public string Textflds45 { get; set; }
+        public string Textflds46 { get; set; }
+        public string Textflds47 { get; set; }
+        public string Textflds48 { get; set; }
+        public string Textflds49 { get; set; }
+        public string Textflds50 { get; set; }
+        public double? Numflds1 { get; set; }
+        public double? Numflds2 { get; set; }
+        public double? Numflds3 { get; set; }
+        public double? Numflds4 { get; set; }
+        public double? Numflds5 { get; set; }
+        public double? Numflds6 { get; set; }
+        public double? Numflds7 { get; set; }
+        public double? Numflds8 { get; set; }
+        public double? Numflds9 { get; set; }
+        public double? Numflds10 { get; set; }
+        public double? Numflds11 { get; set; }
+        public double? Numflds12 { get; set; }
+        public double? Numflds13 { get; set; }
+        public double? Numflds14 { get; set; }
+        public double? Numflds15 { get; set; }
+        public double? Numflds16 { get; set; }
+        public double? Numflds17 { get; set; }
+        public double? Numflds18 { get; set; }
+        public double? Numflds19 { get; set; }
+        public double? Numflds20 { get; set; }
+        public double? Numflds21 { get; set; }
+        public double? Numflds22 { get; set; }
+        public double? Numflds23 { get; set; }
+        public double? Numflds24 { get; set; }
+        public double? Numflds25 { get; set; }
+        public double? Numflds26 { get; set; }
+        public double? Numflds27 { get; set; }
+        public double? Numflds28 { get; set; }
+        public double? Numflds29 { get; set; }
+        public double? Numflds30 { get; set; }
+        public double? Numflds31 { get; set; }
+        public double? Numflds32 { get; set; }
+        public double? Numflds33 { get; set; }
+        public double? Numflds34 { get; set; }
+        public double? Numflds35 { get; set; }
+        public double? Numflds36 { get; set; }
+        public double? Numflds37 { get; set; }
+        public double? Numflds38 { get; set; }
+        public double? Numflds39 { get; set; }
+        public double? Numflds40 { get; set; }
+        public double? Numflds41 { get; set; }
+        public double? Numflds42 { get; set; }
+        public double? Numflds43 { get; set; }
+        public double? Numflds44 { get; set; }
+        public double? Numflds45 { get; set; }
+        public double? Numflds46 { get; set; }
+        public double? Numflds47 { get; set; }
+        public double? Numflds48 { get; set; }
+        public double? Numflds49 { get; set; }
+        public double? Numflds50 { get; set; }
+        public short? Recstatus { get; set; }
+        public short? Siteid { get; set; }
+        public int? Orglogicref { get; set; }
+    }
+}

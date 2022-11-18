@@ -1,0 +1,351 @@
+﻿@model Layer.Core.Dtos.XReportDatas
+@{
+    ViewData["Title"] = "XReport";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+    int status = int.Parse(ViewBag.Error.ToString());
+}
+<style>
+    td, th {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+    }
+</style>
+@if (status != 0)
+{
+    <div class="alert @(status<0?"alert-danger":"alert-success")" id="errorAlert">
+        @(status<0?"İşlem sırasında bir sorun oluştu. Müşteri hizmetleri ile iletişime geçiniz..!":status>0?"Tebrikler.Mailiniz başarı ile gönderildi.":"")
+    </div>
+}
+<div class="alert alert-success" style="display:none" id="alertSuccess">
+
+</div>
+<div class="alert alert-danger" style="display:none" id="alertDanger">
+
+</div>
+<div class="row">
+    <div class="offset-10 col-2">
+        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">
+            Banka Ekle
+        </button>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="col-4">BANKA</div>
+                    <div class="col-8"><input type="text" class="form-control" id="bankName" /></div>
+                    <div class="col-4">IBN</div>
+                    <div class="col-8"><input type="text" class="form-control" id="ibn" /></div>
+                    <div class="col-4">PARA BİRİMİ</div>
+                    <div class="col-8">
+                        <select class="form-control" id="paraBirimi">
+                            <option value="TL">TL</option>
+                            <option value="EURO">EURO</option>
+                            <option value="DOLAR">DOLAR</option>
+                        </select>
+                    </div>
+                    <div class="col-4">HESAP NO</div>
+                    <div class="col-8"><input type="text" class="form-control" id="hesapNo" /></div>
+                    <div class="col-4">ŞUBE KODU</div>
+                    <div class="col-8"><input type="text" class="form-control" id="subeKodu" /></div>
+                    <div class="col-4">ŞUBE ADI</div>
+                    <div class="col-8"><input type="text" class="form-control" id="subeName" /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary" onclick="addBank();">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var errorAlert = document.getElementById("errorAlert");
+    function addBank() {
+        var dto = {
+            Id: 0,
+            Bank: $("#bankName").val(),
+            Ibn: $("#ibn").val(),
+            ParaBirimi: $("#paraBirimi").val(),
+            HesapNo: $("#hesapNo").val(),
+            SubeKodu: $("#subeKodu").val(),
+            SubeAdi: $("#subeName").val()
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                var tr = document.createElement("tr");
+                tr.id = "trBank_" + xhr.responseText;
+                var td1 = document.createElement("td");
+                td1.innerText = $("#bankName").val();
+                $("#bankName").val("");
+                var td2 = document.createElement("td");
+                td2.innerText = $("#ibn").val();
+                $("#ibn").val("");
+                var td3 = document.createElement("td");
+                td3.innerText = $("#paraBirimi").val();
+                $("#paraBirimi").val("");
+                var td4 = document.createElement("td");
+                td4.innerText = $("#hesapNo").val();
+                $("#hesapNo").val("");
+                var td5 = document.createElement("td");
+                td5.innerText = $("#subeKodu").val();
+                $("#subeKodu").val("");
+                var td6 = document.createElement("td");
+                td6.innerText = $("#subeName").val();
+                $("#subeName").val("");
+                var td7 = document.createElement("td");
+                var btn = document.createElement("button");
+                btn.innerText = "Sil";
+                btn.className = "btn btn-danger";
+                btn.setAttribute("onclick", "Remove(" + xhr.responseText + ")");
+                td7.appendChild(btn);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
+                tr.appendChild(td7);
+                $("#tblBank").append(tr);
+                var alert = document.getElementById("alertSuccess");
+                alert.style = "display:block";
+                alert.innerText = "Eklendi! İşleminiz başarıyla gerçekleştirilmiştir.";
+                errorAlert.style.display = "none";
+            }
+        }
+        xhr.open("POST", "/Report/AddBank?json=" + JSON.stringify(dto), true);
+        xhr.send();
+    }
+</script>
+@*<a class="btn btn-warning" href="/Report/MailZip">Excel Gönder</a>*@
+<a class="btn btn-warning" href="/Report/PdfZipMail">Pdf Gönder</a>
+<a class="btn btn-warning" href="/Report/Download?transaction=">Pdf İndir</a>
+<fieldset id="field">
+    <div class="mt-4" style="border-radius:20px" id="form">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label for="exampleInputEmail1" style="font-weight:bold">Başlangıç Tarihi</label>
+                    <input type="date" class="form-control" name="firstDate" id="firstDate">
+                </div>
+                <div class="col-6">
+                    <label for="exampleInputEmail1" style="font-weight:bold">Bitiş Tarihi</label>
+                    <input type="date" class="form-control" name="endDate" id="lastDate">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1" style="font-weight:bold">E-Posta</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Mail giriniz" alt="Mail olarak gönderilecek eposta adresidir." name="receiverMail">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="row mt-4">
+            <div class="col-4" style="font-weight:bold">Dil Seçiniz</div>
+            <div class="col-8">
+                <select name="language" class="form-control" id="language">
+                    <option value="1">Türkçe</option>
+                    <option value="2">İngilizce</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-10">
+            </div>
+            <div class="col-2 offset-10"><button type="button" class="btn btn-primary w-100" onclick="Success();">Belleğe Al</button></div>
+        </div>
+    </div>
+</fieldset>
+<script>
+    function Success() {
+        var errorAlert = document.getElementById("errorAlert");
+        alert($("#lastDate").val());
+        if ($("#lastDate").val() != undefined || $("#lastDate").val() != "" || $("#lastDate").val() != " " || $("#email").val() != undefined || $("#email").val() != "" || $("#email").val() != " ") {
+            var form = document.getElementById("form");
+            var dto = {
+                FirstDate: $("#firstDate").val(),
+                EndDate: $("#lastDate").val(),
+                Email: $("#email").val(),
+                Language: $("#language").val()
+            }
+            console.log("başladı.");
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = xhr.responseText;
+                    if (response == 1) {
+                        form.style = "border:2px solid green";
+                        document.getElementById("field").disabled = true;
+                    }
+                    else {
+                        form.style = "border:2px solid red";
+                        document.getElementById("field").disabled = true;
+                    }
+                    errorAlert.style.display = "none";
+                }
+            }
+            xhr.open("POST", "/Report/Success?json=" + JSON.stringify(dto), true);
+            xhr.send();
+        }
+        else {
+            var danger = document.getElementById("alertDanger");
+            danger.style = "display:block";
+            danger.innerText = "Verileri eksiksiz girdiğinizden emin olun..";
+        }
+    }
+</script>
+<table class="table mt-4" style="min-height:250px" id="tblBank">
+    <tr>
+        <th>BANKA</th>
+        <th>IBN</th>
+        <th>PARA BİRİMİ</th>
+        <th>HESAP NO</th>
+        <th>ŞUBE KODU</th>
+        <th>ŞUBE ADI</th>
+        <th>İŞLEMLER</th>
+    </tr>
+</table>
+
+<script>
+    function Remove(indis) {
+        var errorAlert = document.getElementById("errorAlert");
+        alert(indis);
+        console.log(document.getElementById("trBank_" + indis).innerHTML);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                $("#trBank_" + indis).remove();
+                var alert = document.getElementById("alertSuccess");
+                alert.style = "display:block";
+                alert.innerText = "Silindi! İşleminiz başarıyla gerçekleştirilmiştir.";
+                errorAlert.style.display = "none";
+            }
+        }
+        xhr.open("POST", "/Report/RemoveBank?id=" + indis, true);
+        xhr.send();
+    }
+</script>
+@if (Model != null)
+{
+    <h1>İçerik Şablonu</h1>
+    <hr />
+    <div>
+        <h5> Değerli müşterimiz :@Model.FirmName A.Ş.</h5>
+        <p>
+            @Model.FirstDate tarihi itibari ile firmanızın tarafımızdan yapmış olduğu alımlarla ilgili mevcut bakiyeniz @Model.ExpiryTotalBalance TL'dir.
+        </p>
+    </div>
+    <table class='table table-striped' align='center'>
+        <tr>
+            <th>Vade Tarihi</th>
+            <th>İşlem Tarihi</th>
+            <th>İşlem No</th>
+            <th>İşlem Türü</th>
+            <th>Açıklama</th>
+            <th>Gün</th>
+            <th>Tutar</th>
+            <th>Bakiye</th>
+        </tr>
+        @foreach (var data in Model.ExpiryDatas)
+        {
+        <tr>
+            <td>@data.ExpiryDate</td>
+            <td>@data.TransactionDate</td>
+            <td>@data.TransactionNumber</td>
+            <td>@data.TransactionType</td>
+            <td>@data.Description</td>
+            <td>@data.Day</td>
+            <td>@data.Amount</td>
+            <td>@data.Balance</td>
+        </tr>
+        }
+    </table>
+<br />
+<p>
+<strong> @Model.EndDate</strong> tarihi itibari ile vadesi dolan toplam bakiyeniz <strong> @Model.NotExpiryTotalBalance TL</strong> olacaktır.
+
+Mutabakatlarınız için aşağıdaki mail adreslerinden bize ulaşabilirsiniz.
+    <hr />
+Cari hesap mutabakatları için mail adresi :@Model.CariHesapMail
+    <hr />
+BA/BS mutabakatları için mail adresi : @Model.BA_BS_Mail
+<br />
+<hr />
+</p>
+<br />
+<table class='table table-striped' align='center'>
+<tr>
+<th>Vade Tarihi</th>
+<th>İşlem Tarihi</th>
+<th>İşlem No</th>
+<th>İşlem Türü</th>
+<th>Açıklama</th>
+<th>Gün</th>
+<th>Tutar</th>
+<th>Bakiye</th>
+</tr>
+    @foreach (var data in Model.NotExpiryDatas)
+    {
+       <tr>
+<td>@data.ExpiryDate</td>
+<td>@data.TransactionDate</td>
+<td>@data.TransactionNumber</td>
+<td>@data.TransactionType</td>
+<td>@data.Description</td>
+<td>@data.Day</td>
+<td>@data.Amount</td>
+<td>@data.Balance</td>
+</tr>
+    }
+</table>
+<br />
+<br />
+<br />
+
+<p>Banka Havalesi ile ödemeleriniz için hesap numaralarımız ise aşağıdaki gibidir.</p>
+<table class='table mt-3'>
+<tr>
+<th>BANKA</th>
+<th>IBAN</th>
+<th>PARA BİRİMİ</th>
+<th>HESAP NO</th>
+<th>ŞUBE KODU</th>
+<th>ŞUBE ADI</th>
+</tr>
+    @foreach (var bank in Model.Bankas)
+    {
+<tr>
+<td>@bank.Bank</td>
+<td>@bank.Ibn</td>
+<td>@bank.ParaBirimi</td>
+<td>@bank.HesapNo</td>
+<td>@bank.SubeKodu</td>
+<td>@bank.SubeAdi</td>
+</tr>
+    }
+</table>
+<br />
+<br />
+<br />
+<p>
+İşbirliğiniz için teşekkür eder, iyi çalışmalar dileriz.
+<br />
+<a href='www.google.com'>  MERCEK BİLİŞİM</a>
+</p>
+}

@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace Layer.Core.Models
+{
+    public partial class LMandfld
+    {
+        public int Logicalref { get; set; }
+        public short? Modulenr { get; set; }
+        public short? Level { get; set; }
+        public short? Nr { get; set; }
+        public string Caption { get; set; }
+        public short? Mandatory { get; set; }
+        public short? Doctype1 { get; set; }
+        public short? Doctype2 { get; set; }
+        public short? Doctype3 { get; set; }
+        public short? Doctype4 { get; set; }
+        public short? Doctype5 { get; set; }
+        public short? Doctype6 { get; set; }
+        public short? Doctype7 { get; set; }
+        public short? Doctype8 { get; set; }
+        public short? Doctype9 { get; set; }
+        public short? Doctype10 { get; set; }
+        public short? Doctype11 { get; set; }
+        public short? Doctype12 { get; set; }
+        public short? Doctype13 { get; set; }
+        public short? Doctype14 { get; set; }
+        public short? Doctype15 { get; set; }
+        public short? Doctype16 { get; set; }
+        public short? Doctype17 { get; set; }
+        public short? Doctype18 { get; set; }
+        public short? Doctype19 { get; set; }
+        public short? Doctype20 { get; set; }
+        public short? Doctype21 { get; set; }
+        public short? Doctype22 { get; set; }
+        public short? Doctype23 { get; set; }
+        public short? Doctype24 { get; set; }
+        public short? Doctype25 { get; set; }
+        public short? Trntype1 { get; set; }
+        public short? Trntype2 { get; set; }
+        public short? Trntype3 { get; set; }
+        public short? Trntype4 { get; set; }
+        public short? Trntype5 { get; set; }
+        public short? Trntype6 { get; set; }
+        public short? Trntype7 { get; set; }
+        public short? Trntype8 { get; set; }
+        public short? Trntype9 { get; set; }
+        public short? Trntype10 { get; set; }
+        public short? Trntype11 { get; set; }
+        public short? Trntype12 { get; set; }
+        public short? Trntype13 { get; set; }
+        public short? Trntype14 { get; set; }
+        public short? Trntype15 { get; set; }
+        public short? Trntype16 { get; set; }
+        public short? Trntype17 { get; set; }
+        public short? Trntype18 { get; set; }
+        public short? Trntype19 { get; set; }
+        public short? Trntype20 { get; set; }
+        public short? Trntype21 { get; set; }
+        public short? Trntype22 { get; set; }
+        public short? Trntype23 { get; set; }
+        public short? Trntype24 { get; set; }
+        public short? Trntype25 { get; set; }
+        public short? Firmnr { get; set; }
+        public string Frmstrg1 { get; set; }
+        public string Frmstrg2 { get; set; }
+        public string Frmstrg3 { get; set; }
+        public string Frmstrg4 { get; set; }
+        public string Frmstrg5 { get; set; }
+        public string Frmstrcap { get; set; }
+        public string Lineinfo { get; set; }
+        public short? Mandminlen { get; set; }
+        public short? Mandmaxlen { get; set; }
+        public short? Mandvaluetype { get; set; }
+        public short? Einvoicetype1 { get; set; }
+        public short? Einvoicetype2 { get; set; }
+        public short? Einvoicetype3 { get; set; }
+        public short? Einvoicetype4 { get; set; }
+        public short? Einvoicetype5 { get; set; }
+        public short? Einvoicetype6 { get; set; }
+        public short? Einvoicetype7 { get; set; }
+        public short? Einvoicetype8 { get; set; }
+        public short? Einvoicetype9 { get; set; }
+        public short? Einvoicetype10 { get; set; }
+        public short? Edespatchtype1 { get; set; }
+        public short? Edespatchtype2 { get; set; }
+        public short? Edespatchtype3 { get; set; }
+        public short? Edespatchtype4 { get; set; }
+        public short? Edespatchtype5 { get; set; }
+        public short? Edespatchtype6 { get; set; }
+        public short? Edespatchtype7 { get; set; }
+        public short? Edespatchtype8 { get; set; }
+        public short? Edespatchtype9 { get; set; }
+        public short? Edespatchtype10 { get; set; }
+        public short? Itemtype1 { get; set; }
+        public short? Itemtype2 { get; set; }
+        public short? Itemtype3 { get; set; }
+        public short? Itemtype4 { get; set; }
+        public short? Itemtype5 { get; set; }
+        public short? Itemtype6 { get; set; }
+        public short? Itemtype7 { get; set; }
+        public short? Itemtype8 { get; set; }
+        public short? Itemtype9 { get; set; }
+        public short? Itemtype10 { get; set; }
+        public short? Itemtype11 { get; set; }
+        public short? Itemtype12 { get; set; }
+        public short? Itemtype13 { get; set; }
+        public short? Itemtype14 { get; set; }
+        public short? Itemtype15 { get; set; }
+        public short? Itemtype16 { get; set; }
+        public short? Itemtype17 { get; set; }
+        public short? Itemtype18 { get; set; }
+        public short? Itemtype19 { get; set; }
+        public short? Itemtype20 { get; set; }
+        public short? Itemtype21 { get; set; }
+        public short? Itemtype22 { get; set; }
+        public short? Itemtype23 { get; set; }
+        public short? Itemtype24 { get; set; }
+        public short? Itemtype25 { get; set; }
+    }
+}

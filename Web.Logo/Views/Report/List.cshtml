@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Report>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+<div class="alert alert-danger" style="display:none" id="error">
+
+</div>
+<div class="row">
+    <div class="offset-10 col-2 ">
+        <a href="/Report/Create" class="btn btn-success">
+            New Report
+        </a>
+    </div>
+</div>
+<table class="table table-striped mt-4">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Content
+        </th>
+        <th style="text-align:right">
+            Transactions
+        </th>
+    </tr>
+    @foreach (var report in Model)
+    {
+        <tr id="tr_@report.Id">
+            <td>
+                @report.Name
+            </td>
+            <td>
+                @Html.Raw(report.Content)
+            </td>
+            <td align="right">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Selected Transaction
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="javascript:void()" onclick="removeReport(@report.Id)">Remove</a>
+                        <a class="dropdown-item" href="/Report/Edit?id=@report.Id">Update</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+<script>
+    var error = document.getElementById("error");
+    function removeReport(id) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var result = xhr.responseText;
+                if (result == 1) {
+                    error.style.display = "none";
+                    var tr = document.getElementById("tr_" + id);
+                    tr.remove();
+                }
+                else {
+                   
+                    error.style.display = "block";
+                    error.innerText = "Beklenmedik bir hata oluştu.";
+                }
+            }
+        }
+        xhr.open("POST","/Report/Remove?id="+id,true);
+        xhr.send();
+    }
+</script>

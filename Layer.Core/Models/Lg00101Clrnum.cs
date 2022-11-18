@@ -1,0 +1,125 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace Layer.Core.Models
+{
+    public partial class Lg00101Clrnum
+    {
+        public int Logicalref { get; set; }
+        public int? Clcardref { get; set; }
+        public short? Risktype { get; set; }
+        public short? Riskover { get; set; }
+        public double? Ps { get; set; }
+        public double? Kc { get; set; }
+        public double? Risktotal { get; set; }
+        public double? Desprisktotal { get; set; }
+        public double? Risklimit { get; set; }
+        public double? Riskbalanced { get; set; }
+        public double? Cekriskfactor { get; set; }
+        public double? Senetriskfactor { get; set; }
+        public double? Cek0Debit { get; set; }
+        public double? Cek0Credit { get; set; }
+        public double? Cek1Debit { get; set; }
+        public double? Cek1Credit { get; set; }
+        public double? Senet0Debit { get; set; }
+        public double? Senet0Credit { get; set; }
+        public double? Senet1Debit { get; set; }
+        public double? Senet1Credit { get; set; }
+        public double? Cekcurr0Debit { get; set; }
+        public double? Cekcurr0Credit { get; set; }
+        public double? Cekcurr1Debit { get; set; }
+        public double? Cekcurr1Credit { get; set; }
+        public double? Senetcurr0Debit { get; set; }
+        public double? Senetcurr0Credit { get; set; }
+        public double? Senetcurr1Debit { get; set; }
+        public double? Senetcurr1Credit { get; set; }
+        public short? Ordriskover { get; set; }
+        public short? Despriskover { get; set; }
+        public short? Usereprisk { get; set; }
+        public double? Reprisktotal { get; set; }
+        public double? Repdesprisktotal { get; set; }
+        public double? Reprisklimit { get; set; }
+        public double? Repriskbalanced { get; set; }
+        public double? Repps { get; set; }
+        public double? Repkc { get; set; }
+        public double? Ordrisktotal { get; set; }
+        public double? Ordrisktotalsugg { get; set; }
+        public double? Repordrisktotal { get; set; }
+        public double? Repordrisktotalsugg { get; set; }
+        public short? Risktypes1 { get; set; }
+        public short? Risktypes2 { get; set; }
+        public short? Risktypes3 { get; set; }
+        public short? Risktypes4 { get; set; }
+        public short? Risktypes5 { get; set; }
+        public short? Risktypes6 { get; set; }
+        public short? Risktypes7 { get; set; }
+        public short? Risktypes8 { get; set; }
+        public short? Risktypes9 { get; set; }
+        public short? Risktypes10 { get; set; }
+        public short? Risktypes11 { get; set; }
+        public short? Risktypes12 { get; set; }
+        public short? Risktypes13 { get; set; }
+        public short? Risktypes14 { get; set; }
+        public short? Risktypes15 { get; set; }
+        public double? Cstcekriskfactor { get; set; }
+        public double? Cstsenetriskfactor { get; set; }
+        public short? Riskgrpcontrol { get; set; }
+        public short? Accriskover { get; set; }
+        public short? Cstcsriskover { get; set; }
+        public short? Mycsriskover { get; set; }
+        public short? Riskctrltype { get; set; }
+        public double? Accrisktotal { get; set; }
+        public double? Repaccrisktotal { get; set; }
+        public double? Cstcsrisktotal { get; set; }
+        public double? Repcstcsrisktotal { get; set; }
+        public double? Mycsrisktotal { get; set; }
+        public double? Repmycsrisktotal { get; set; }
+        public double? Accrisklimit { get; set; }
+        public double? Repaccrisklimit { get; set; }
+        public double? Cstcsrisklimit { get; set; }
+        public double? Repcstcsrisklimit { get; set; }
+        public double? Mycsrisklimit { get; set; }
+        public double? Repmycsrisklimit { get; set; }
+        public double? Desprisklimit { get; set; }
+        public double? Repdesprisklimit { get; set; }
+        public double? Ordrisklimit { get; set; }
+        public double? Repordrisklimit { get; set; }
+        public double? Ordrisklimitsugg { get; set; }
+        public double? Repordrisklimitsugg { get; set; }
+        public double? Accrskblnced { get; set; }
+        public double? Repaccrskblnced { get; set; }
+        public double? Cstcsrskblnced { get; set; }
+        public double? Repcstcsrskblnced { get; set; }
+        public double? Mycsrskblnced { get; set; }
+        public double? Repmycsrskblnced { get; set; }
+        public double? Desprskblnced { get; set; }
+        public double? Repdesprskblnced { get; set; }
+        public double? Ordrskblnced { get; set; }
+        public double? Repordrskblnced { get; set; }
+        public double? Ordrskblncedsug { get; set; }
+        public double? Repordrskblncedsug { get; set; }
+        public short? Ordriskoversugg { get; set; }
+        public short? Csdownsrisk { get; set; }
+        public short? Cstcsciroriskover { get; set; }
+        public double? Cstcirocekriskfac { get; set; }
+        public double? Cstcirosenetriskfac { get; set; }
+        public short? Cscirodownsrisk { get; set; }
+        public double? Cstcscirorisklimit { get; set; }
+        public double? Repcstcscirorisklim { get; set; }
+        public double? Cstcscirorskblnced { get; set; }
+        public double? Repcstcscirorskbln { get; set; }
+        public double? Cstcsownrisktotal { get; set; }
+        public double? Repcstcsownrisktot { get; set; }
+        public double? Cstcscirorisktotal { get; set; }
+        public double? Repcstcscirorisktot { get; set; }
+        public short? Despriskoversug { get; set; }
+        public double? Desprisklimitsug { get; set; }
+        public double? Repdesprisklimitsug { get; set; }
+        public double? Desprisktotalsug { get; set; }
+        public double? Repdesprisktotalsug { get; set; }
+        public double? Desprskblncedsug { get; set; }
+        public double? Repdesprskblncedsug { get; set; }
+    }
+}
